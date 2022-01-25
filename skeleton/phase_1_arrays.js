@@ -59,7 +59,7 @@ Array.prototype.transpose = function() {
 }
 
 
-// myEach
+// myEach(callback)
 
 Array.prototype.myEach = function(call) {
     for (let i = 0; i < this.length; i++) {
@@ -67,7 +67,16 @@ Array.prototype.myEach = function(call) {
     }
 }
 
-function test(ele) { console.log(ele * 2); 
+function test(ele) { 
                      return ele * 2;}
 
-console.log([1, 2, 3].myEach(test));
+//console.log([1, 2, 3].myEach(test));
+
+// myMap(callback)
+
+Array.prototype.myMap = function(callback) {
+    let result = [];
+    this.myEach(ele => result.push(callback(ele))); //function(ele) same as ele => 
+    return result;
+}
+console.log([1, 2, 3].myMap(test));
