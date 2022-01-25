@@ -43,3 +43,18 @@ Array.prototype.twoSum = function() {
     return result;
 }
 
+// Transpose 
+
+Array.prototype.transpose = function() {
+    let result = [];
+    let length = this.length;
+
+    for (let i = 0; i < length; i++) {
+        result.push([]);
+        for (let j = 0; j < length; j++) {
+            result[i].push(this[j][i]);
+        }
+    }
+    return result;
+}
+
