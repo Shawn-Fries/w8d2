@@ -15,7 +15,7 @@ Array.prototype.uniq = function () {
 //     result.push(ele);
 // }
 
-console.log([1,1,2,2,3,3,4,4,5,5].uniq())
+//console.log([1,1,2,2,3,3,4,4,5,5].uniq())
 
 
 // Two Sum
@@ -58,3 +58,16 @@ Array.prototype.transpose = function() {
     return result;
 }
 
+
+// myEach
+
+Array.prototype.myEach = function(call) {
+    for (let i = 0; i < this.length; i++) {
+        call(this[i]);
+    }
+}
+
+function test(ele) { console.log(ele * 2); 
+                     return ele * 2;}
+
+console.log([1, 2, 3].myEach(test));
